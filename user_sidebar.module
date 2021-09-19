@@ -16,7 +16,7 @@ function user_sidebar_help($route_name, RouteMatchInterface $route_match) {
     case 'help.page.user_sidebar':
       $output = '';
       $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('Provides a sidebar block displaying authenticated user information') . '</p>';
+      $output .= '<p>' . t('Provides a sidebar block displaying user information and messaging.') . '</p>';
       return $output;
 
     default:
