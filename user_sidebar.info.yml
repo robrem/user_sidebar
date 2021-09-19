@@ -1,0 +1,5 @@
+name: 'User Sidebar'
+type: module
+description: 'Provides a sidebar block displaying authenticated user information'
+core_version_requirement: ^8 || ^9
+package: 'User Profile'
