@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - user_sidebar
+  theme:
+    - bartik
+id: usersidebarblock
+theme: bartik
+region: sidebar_first
+weight: 0
+provider: null
+plugin: user_sidebar_block
+settings:
+  id: user_sidebar_block
+  label: 'User sidebar block'
+  provider: user_sidebar
+  label_display: visible
+  custom_message: null
+  hide_for_anonymous: 0
+visibility: {  }
