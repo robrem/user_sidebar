@@ -22,3 +22,17 @@ function user_sidebar_help($route_name, RouteMatchInterface $route_match) {
     default:
   }
 }
+
+/**
+ * Implements hook_theme().
+ */
+function user_sidebar_theme() {
+  return [
+    'user_sidebar_block' => [
+      'variables' => [
+        'custom_message' => NULL,
+      ],
+      'render element' => 'children',
+    ],
+  ];
+}
