@@ -48,10 +48,15 @@
 
       {% if logged_in %}
         <p>Your last log in was {{ last_login }}</p>
+        <p><a href="{{ user_url }}">Visit your profile</a></p>
+        <p>{{ custom_message }}</p>
+      {% else %}
+        <p><a href="{{ user_url }}">Log in or create an account</a></p>
+        {% if not hide_for_anonymous %}
+          <p>{{ custom_message }}</p>
+        {%  endif %}
       {% endif %}
 
-      <p>{{ custom_message }}</p>
-      <p><a href="{{ user_url }}">Visit your profile</a></p>
     </div>
   {% endblock %}
 </div>
