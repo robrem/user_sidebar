@@ -9,7 +9,7 @@ use Drupal\Core\Url;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Provides a 'UserSidebarBlock' block.
+ * Provides a configurable block displaying user information and a message.
  *
  * @Block(
  *  id = "user_sidebar_block",
