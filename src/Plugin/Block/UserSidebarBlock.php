@@ -84,11 +84,18 @@ class UserSidebarBlock extends BlockBase implements ContainerFactoryPluginInterf
     // users.
     $user_url = Url::fromRoute('user.page')->toString();
     // Datetime of the user's last login.
+    $last_login = NULL;
+    if ($user->isAuthenticated()) {
+      // Date of user's last login in format "December 21st, 2012 9:01 am".
+      $last_login = $user->getLastAccessedTime();
+      $last_login = $this->dateFormatter->format($last_login, 'custom', 'F jS, Y g:i a');
+    }
 
     $build = [
       '#theme' => 'user_sidebar_block',
       '#username' => $username,
       '#user_url' => $user_url,
+      '#last_login' => $last_login,
       '#custom_message' => $this->configuration['custom_message'],
       '#hide_for_anonymous' => $this->configuration['hide_for_anonymous']
     ];

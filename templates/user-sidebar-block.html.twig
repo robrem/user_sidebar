@@ -43,8 +43,13 @@
   {% endif %}
   {{ title_suffix }}
   {% block content %}
-    <p>Hello {{ username }}!</p>
     <div{{ content_attributes.addClass('content') }}>
+      <p>Hello {{ username }}!</p>
+
+      {% if logged_in %}
+        <p>Your last log in was {{ last_login }}</p>
+      {% endif %}
+
       <p>{{ custom_message }}</p>
       <p><a href="{{ user_url }}">Visit your profile</a></p>
     </div>

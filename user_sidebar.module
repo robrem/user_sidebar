@@ -32,6 +32,7 @@ function user_sidebar_theme() {
       'variables' => [
         'username' => NULL,
         'user_url' => NULL,
+        'last_login' => NULL,
         'custom_message' => NULL,
         'hide_for_anonymous' => NULL,
       ],
