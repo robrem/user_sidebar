@@ -3,8 +3,8 @@
 ---
 
 ## Introduction
-User Sidebar allows administrators to provide block featuring a greeting and
-custom message to site visitors.
+User Sidebar allows administrators to provide a block featuring a greeting and
+custom message for site visitors.
 
 The custom message can be optionally hidden for Anonymous users.
 
