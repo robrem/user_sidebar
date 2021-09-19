@@ -5,6 +5,7 @@ namespace Drupal\user_sidebar\Plugin\Block;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\Core\Url;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -77,8 +78,17 @@ class UserSidebarBlock extends BlockBase implements ContainerFactoryPluginInterf
    * {@inheritdoc}
    */
   public function build() {
+    $user = \Drupal::currentUser();
+    $username = $user->getDisplayName();
+    // Link to the user profile page. Defaults to login block for Anonymous
+    // users.
+    $user_url = Url::fromRoute('user.page')->toString();
+    // Datetime of the user's last login.
+
     $build = [
       '#theme' => 'user_sidebar_block',
+      '#username' => $username,
+      '#user_url' => $user_url,
       '#custom_message' => $this->configuration['custom_message'],
       '#hide_for_anonymous' => $this->configuration['hide_for_anonymous']
     ];

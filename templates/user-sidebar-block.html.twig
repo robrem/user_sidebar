@@ -43,8 +43,10 @@
   {% endif %}
   {{ title_suffix }}
   {% block content %}
+    <p>Hello {{ username }}!</p>
     <div{{ content_attributes.addClass('content') }}>
       <p>{{ custom_message }}</p>
+      <p><a href="{{ user_url }}">Visit your profile</a></p>
     </div>
   {% endblock %}
 </div>

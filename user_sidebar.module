@@ -30,7 +30,10 @@ function user_sidebar_theme() {
   return [
     'user_sidebar_block' => [
       'variables' => [
+        'username' => NULL,
+        'user_url' => NULL,
         'custom_message' => NULL,
+        'hide_for_anonymous' => NULL,
       ],
       'render element' => 'children',
     ],
